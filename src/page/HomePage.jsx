@@ -28,7 +28,7 @@ export const HomePage = () => {
     >
       {isMobileView ? (
         <>
-          <div style={{ marginBottom: "20px", width: "100%" }}>
+          <div style={{  width: "100%" }}>
             <DesktopDisplayCard />
           </div>
           <div style={{ width: "100%" }}>

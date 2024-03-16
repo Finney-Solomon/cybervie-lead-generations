@@ -84,7 +84,7 @@ export const LeadForm = () => {
               {...register("name", {
                 required: "Name is required",
                 pattern: {
-                  value: /^[A-Za-z]+$/,
+                  value: /^[A-Za-z\s]+$/,
                   message: "Name should contain only alphabetic characters",
                 },
                 minLength: {
