@@ -25,7 +25,7 @@ export const Header = () => {
             />
             <Button
               variant="text"
-              onClick={window.open("https://www.cybervie.com/", "_blank")}
+              onClick={()=>window.open("https://www.cybervie.com/", "_blank")}
               sx={{
                 margin: "15px 0vh 10px 16vh",
                 color: "success",
