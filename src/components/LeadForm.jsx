@@ -65,6 +65,7 @@ export const LeadForm = () => {
         margin: "auto",
         alignContent: "center",
         justifyContent: "center",
+        paddingBottom:"8vh"
       }}
     >
       <Typography
@@ -72,14 +73,15 @@ export const LeadForm = () => {
         style={{
           margin: 0,
           fontFamily: "Monospace",
-          fontSize: "2rem",
+          fontSize: "2.2rem",
           lineHeight: 1.334,
           color: "#114084",
           paddingTop: "2em",
           textAlign: "center",
+          fontWeight:"900"
         }}
       >
-        CONNECT WITH US...
+        CONNECT WITH US
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ margin: "0rem 5rem 0rem" }}>
@@ -193,7 +195,7 @@ export const LeadForm = () => {
             />
           </div>
         </div>
-        <div style={{ margin: "1rem 0", textAlign: "center" }}>
+        <div style={{ margin: "1rem 0", textAlign: "center",padding:"2em" }}>
           <Button type="submit" variant="contained">
             Request Call Back
           </Button>

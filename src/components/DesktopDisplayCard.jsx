@@ -29,7 +29,7 @@ export const DesktopDisplayCard = () => {
         <div
           style={{
             justifyContent: "center",
-            paddingInline: "2em",
+            paddingInline: "2.5em",
             lineHeight: "auto",
             paddingTop: "3em",
             margin: "auto",
@@ -72,6 +72,7 @@ export const DesktopDisplayCard = () => {
               },
             }}
             variant="h3"
+            data-aos="fade-up-right"
           >
             Cybervie
           </Typography>
@@ -80,7 +81,7 @@ export const DesktopDisplayCard = () => {
             align="left"
             sx={{
               color: "#f1f1f1",
-              fontFamily: "Arial",
+              fontFamily: "monospace",
             }}
             variant="h5"
           >
@@ -94,9 +95,10 @@ export const DesktopDisplayCard = () => {
             align="left"
             sx={{
               color: "#f1f1f1",
-              fontFamily: "Arial",
+              fontFamily: "monospace",
             }}
             variant="h5"
+            
           >
             Join us now and embark on a journey towards a rewarding career in
             cybersecurity!
