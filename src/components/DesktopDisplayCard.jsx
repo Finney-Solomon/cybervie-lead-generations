@@ -1,15 +1,14 @@
-import { Paper, Typography } from "@mui/material";
 import React from "react";
-
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 export const DesktopDisplayCard = () => {
   return (
     <div
       style={{
         background: "url(/images/backgroundImages.jpg)",
-        // width: "100.5vw",
-        padding: "2rem",
-        height: "83.5vh",
+
+        height: "91vh",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
@@ -17,87 +16,93 @@ export const DesktopDisplayCard = () => {
       }}
     >
       <Paper
-        // elevation={0}
         sx={{
-          backgroundColor: "#1c1c1c75",
-          margin: "3em",
-          padding: "2em",
+          backgroundColor: "#1c1c1cab",
+          justifyContent: "center",
 
-          paddingInline: "2em",
           color: "#f1f1f1",
-          width: "85%",
-
+          width: "100%",
+          height: "100%",
           textAlign: "center",
         }}
       >
-        <Typography
-          align="left"
-          sx={{
-            color: "#f0e9e9",
-            transition: "color 0.5s ease",
-            fontFamily: "Courier New, monospace",
-            fontWeight: "2rem",
+        <div
+          style={{
+            justifyContent: "center",
+            paddingInline: "2em",
+            lineHeight: "auto",
+            paddingTop: "3em",
+            margin: "auto",
+            padding: "auto",
           }}
-          variant="h2"
         >
-          Welcome to Cybervie
-        </Typography>
-        <br />
-        <Typography
-          align="left"
-          sx={{
-            color: "#f1f1f1",
-            transition: "color 0.5s ease",
-            fontFamily: "Courier New, monospace",
-          }}
-          variant="h5"
-        >
-          Comprehensive Cybervie-Certified SOC Analyst Training featuring
-          cloud-based labs replicating real-world scenarios, with placement
-          assistance
-        </Typography>
-        <br />
-        <br />
-        <Typography
-          align="left"
-          sx={{
-            color: "#f1f1f1",
-            transition: "color 0.5s ease",
-            fontFamily: "Courier New, monospace",
-          }}
-          variant="h6"
-        >
-          Join us now and embark on a journey towards a rewarding career in
-          cybersecurity!
-        </Typography>
+          <Typography
+            align="left"
+            sx={{
+              marginTop: "1em",
+              textTransform: "uppercase",
+              WebkitTextStrokeWidth: "1px",
+              WebkitTextStrokeColor: "#ff6b6b",
+              fontFamily: "BlinkMacSystemFont",
+              WebkitTextStroke: "#f1f1f1eb",
+              fontSize: "auto",
+              letterSpacing: "0.1em",
+              animation: "flicker 2s ease-in-out infinite alternate",
+              lineHeight: "2",
+            }}
+            variant="h4"
+          >
+            Welcome to
+          </Typography>
+          <Typography
+            align="left"
+            sx={{
+              textTransform: "uppercase",
+              color: "4e5c66",
+              fontFamily: "Helvetica Neue",
+              WebkitTextStroke: "#f1f1f1",
+              textDecoration: "underline",
+              letterSpacing: "0.3em",
+              fontSize: "auto",
+              animation: "flicker 2s ease-in-out infinite alternate",
+              lineHeight: "1",
+              "&:hover": {
+                color: "#82B7DC",
+                textShadow: "5px 5px 100px white",
+              },
+            }}
+            variant="h3"
+          >
+            Cybervie
+          </Typography>
+          <br />
+          <Typography
+            align="left"
+            sx={{
+              color: "#f1f1f1",
+              fontFamily: "Arial",
+            }}
+            variant="h5"
+          >
+            Comprehensive Cybervie-Certified SOC Analyst Training featuring
+            cloud-based labs replicating real-world scenarios, with placement
+            assistance
+          </Typography>
+          <br />
 
+          <Typography
+            align="left"
+            sx={{
+              color: "#f1f1f1",
+              fontFamily: "Arial",
+            }}
+            variant="h5"
+          >
+            Join us now and embark on a journey towards a rewarding career in
+            cybersecurity!
+          </Typography>
+        </div>
         <br />
-        {/* <Typography
-          align="left"
-          sx={{ color: "#f1f1f1", transition: 'color 0.5s ease', fontFamily: 'Courier New, monospace' }}
-          variant="h6"
-        >
-          Personal Career Guidance to Help you Crack the Interviews.
-        </Typography>
-        <br />
-        <Typography
-          align="left"
-          sx={{ color: "#f1f1f1", transition: 'color 0.5s ease', fontFamily: 'Courier New, monospace' }}
-          variant="h6"
-        >
-          All Students get Access to the Huge Repository of Real-time Projects
-          and Sample Scenarios created by Industry Experts.
-        </Typography>
-        <br />
-        <Typography
-          align="left"
-          sx={{ color: "#f1f1f1", transition: 'color 0.5s ease', fontFamily: 'Courier New, monospace' }}
-          variant="h6"
-        >
-          Connect with a diverse community of cybersecurity enthusiasts and
-          professionals globally, fostering collaboration, networking, and
-          knowledge exchange
-        </Typography> */}
       </Paper>
     </div>
   );

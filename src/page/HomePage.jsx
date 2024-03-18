@@ -28,7 +28,7 @@ export const HomePage = () => {
     >
       {isMobileView ? (
         <>
-          <div style={{  width: "100%" }}>
+          <div style={{  width: "100%" ,lineHeight:"4"}}>
             <DesktopDisplayCard />
           </div>
           <div style={{ width: "100%" }}>
@@ -37,7 +37,7 @@ export const HomePage = () => {
         </>
       ) : (
         <>
-          <div style={{ minWidth: "65vw", maxWidth: "65%" }}>
+          <div style={{ minWidth: "65vw", maxWidth: "65%" ,lineHeight:"2"}}>
             <DesktopDisplayCard />
           </div>
           <div style={{ minWidth: "35vw", maxWidth: "35%" }}>

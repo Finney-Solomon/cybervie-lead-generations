@@ -1,10 +1,12 @@
-import { Alert, Box, Snackbar, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "../api/api";
+import { useDispatch } from "react-redux";
+import { openSnackBarNotification } from "../redux/actions";
 
 export const LeadForm = () => {
   const {
@@ -13,36 +15,43 @@ export const LeadForm = () => {
     formState: { errors },
   } = useForm();
 
-  const [notification, setNotification] = React.useState(false);
-  const [notificationData, setNotificationData] = React.useState("");
-
+  const dispatch = useDispatch();
   const onSubmit = async (data) => {
     try {
       if (Object.keys(errors).length === 0) {
         console.log("Form data submitted:", data);
 
         const response = await axios.post(
-          "http://localhost:5001/usersLeads/addNewUserLeads",
+          "https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads",
           data
         );
-
-        console.log("Data sent successfully:", response.data);
-        setNotification(true);
-        setNotificationData("Request sent Successfully");
+        if (response?.data?.success) {
+          const notification = {
+            isOpen: true,
+            notificationMessage: "Thank you we will get Back to You Soon!",
+            notificationType: "success",
+          };
+          dispatch(openSnackBarNotification(notification));
+        }
+      } else {
+        const notification = {
+          isOpen: true,
+          notificationMessage:
+            "Something went Wrong Please Contact dev.cybervie@gmail.com!",
+          notificationType: "error",
+        };
+        dispatch(openSnackBarNotification(notification));
       }
     } catch (error) {
       console.error("Error sending data:", error);
-      setNotification(true);
-      setNotificationData("Something Went Wrong");
+      const notification = {
+        isOpen: true,
+        notificationMessage:
+          "Something went Wrong Please Contact dev.cybervie@gmail.com!",
+        notificationType: "error",
+      };
+      dispatch(openSnackBarNotification(notification));
     }
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setNotification(false);
   };
 
   return (
@@ -53,6 +62,9 @@ export const LeadForm = () => {
         backgroundColor: "#f1f1f1",
         minHeight: "100%",
         width: "100%",
+        margin: "auto",
+        alignContent: "center",
+        justifyContent: "center",
       }}
     >
       <Typography
@@ -63,11 +75,11 @@ export const LeadForm = () => {
           fontSize: "2rem",
           lineHeight: 1.334,
           color: "#114084",
-          padding: "2em",
-          textAlign:"center"
+          paddingTop: "2em",
+          textAlign: "center",
         }}
       >
-        Connect with us...
+        CONNECT WITH US...
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ margin: "0rem 5rem 0rem" }}>
@@ -187,22 +199,6 @@ export const LeadForm = () => {
           </Button>
         </div>
       </form>
-      {notification && (
-        <Snackbar
-          open={notification}
-          autoHideDuration={6000}
-          onClose={handleClose}
-        >
-          <Alert
-            onClose={handleClose}
-            severity="success"
-            variant="filled"
-            sx={{ width: "100%" }}
-          >
-            {notificationData}
-          </Alert>
-        </Snackbar>
-      )}
     </Box>
   );
 };
