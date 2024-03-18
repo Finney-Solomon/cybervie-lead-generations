@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import axios from "../api/api";
 import { useDispatch } from "react-redux";
 import { openSnackBarNotification } from "../redux/actions";
+import { Backdrop, CircularProgress } from "@mui/material";
 
 export const LeadForm = () => {
   const {
@@ -14,9 +15,11 @@ export const LeadForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [open, setOpen] = React.useState(false);
 
   const dispatch = useDispatch();
   const onSubmit = async (data) => {
+    setOpen(true);
     try {
       if (Object.keys(errors).length === 0) {
         console.log("Form data submitted:", data);
@@ -51,6 +54,8 @@ export const LeadForm = () => {
         notificationType: "error",
       };
       dispatch(openSnackBarNotification(notification));
+    } finally {
+      setOpen(false);
     }
   };
 
@@ -65,7 +70,6 @@ export const LeadForm = () => {
         margin: "auto",
         alignContent: "center",
         justifyContent: "center",
-        paddingBottom:"8vh"
       }}
     >
       <Typography
@@ -78,7 +82,7 @@ export const LeadForm = () => {
           color: "#114084",
           paddingTop: "2em",
           textAlign: "center",
-          fontWeight:"900"
+          fontWeight: "900",
         }}
       >
         CONNECT WITH US
@@ -195,10 +199,20 @@ export const LeadForm = () => {
             />
           </div>
         </div>
-        <div style={{ margin: "1rem 0", textAlign: "center",padding:"2em" }}>
+        <div style={{ margin: "1rem 0", textAlign: "center", padding: "1em" }}>
           <Button type="submit" variant="contained">
             Request Call Back
           </Button>
+          {open ? (
+            <Backdrop
+              sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+              open={open}
+            >
+              <CircularProgress color="inherit" />
+            </Backdrop>
+          ) : (
+            <></>
+          )}
         </div>
       </form>
     </Box>
