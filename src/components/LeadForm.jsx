@@ -14,7 +14,7 @@ export const LeadForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset 
+    reset,
   } = useForm();
   const [open, setOpen] = React.useState(false);
 
@@ -26,8 +26,8 @@ export const LeadForm = () => {
         console.log("Form data submitted:", data);
         // https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads
         //   "http://localhost:5001/usersLeads/addNewUserLeads"
-        const response = await axios.post( 
-          "https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads",
+        const response = await axios.post(
+          "http://localhost:5001/usersLeads/addNewUserLeads",
           data
         );
         if (response?.data?.success) {
@@ -37,7 +37,7 @@ export const LeadForm = () => {
             notificationType: "success",
           };
           dispatch(openSnackBarNotification(notification));
-          reset ()
+          reset();
         }
       } else {
         const notification = {
@@ -198,8 +198,24 @@ export const LeadForm = () => {
               rows={4}
               label="Message"
               variant="standard"
-              {...register("message")}
+              {...register("message", {
+                maxLength: {
+                  value: 100,
+                  message: "Exceeding Limit minimum 100 charters ",
+                },
+              })}
             />
+            {errors.message && (
+              <span
+                style={{
+                  color: "#c20303",
+                  fontSize: "0.8rem",
+                  textAlign: "left",
+                }}
+              >
+                {errors.message.message}
+              </span>
+            )}
           </div>
         </div>
         <div style={{ margin: "1rem 0", textAlign: "center", padding: "1em" }}>
