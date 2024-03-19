@@ -9,7 +9,7 @@ export const DesktopDisplayCard = () => {
     <div
       style={{
         background: "url(/background.jpg)",
-        height: !isMobileView?"91vh":'40vh',       
+        height: !isMobileView?"91vh":'41vh',       
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",

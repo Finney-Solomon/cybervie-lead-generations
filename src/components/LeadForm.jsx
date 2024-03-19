@@ -27,7 +27,7 @@ export const LeadForm = () => {
         // https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads
         //   "http://localhost:5001/usersLeads/addNewUserLeads"
         const response = await axios.post(
-          "http://localhost:5001/usersLeads/addNewUserLeads",
+          "https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads",
           data
         );
         if (response?.data?.success) {
