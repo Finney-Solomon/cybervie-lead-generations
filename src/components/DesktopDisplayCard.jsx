@@ -8,28 +8,25 @@ export const DesktopDisplayCard = () => {
   return (
     <div
       style={{
-        background: "url(/images/backgroundImages.jpg)",
-
-        height: !isMobileView?"91vh":'75vh',
-        
+        background: "url(/background.jpg)",
+        height: !isMobileView?"91vh":'40vh',       
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
-        backgroundColor: "rgba(0, 0, 0, 0.795)",
+        // backgroundColor: "rgba(0, 0, 0, 0.795)",
       }}
     >
       <Paper
         sx={{
-          backgroundColor: "#1c1c1cab",
+           backgroundColor: "#1c1c1c14",
           justifyContent: "center",
-
           color: "#f1f1f1",
           width: "100%",
           height: "100%",
           textAlign: "center",
         }}
       >
-        <div
+        {/* <div
           style={{
             justifyContent: "center",
             paddingInline: "2.5em",
@@ -45,17 +42,19 @@ export const DesktopDisplayCard = () => {
               marginTop: "1em",
               textTransform: "uppercase",
               WebkitTextStrokeWidth: "1px",
-              WebkitTextStrokeColor: "#ff6b6b",
-              fontFamily: "BlinkMacSystemFont",
-              WebkitTextStroke: "#f1f1f1eb",
+              fontFamily: "Helvetica Neue",
+              WebkitTextStroke: "#bd1b1beb",
               fontSize: "auto",
               letterSpacing: "0.1em",
               animation: "flicker 2s ease-in-out infinite alternate",
               lineHeight: "2",
+                fontWeight: "900",
+
+                textShadow: "10px 10px 100px white",
             }}
             variant="h4"
           >
-            Welcome to
+            Welcome to Cybervie
           </Typography>
           <Typography
             align="left"
@@ -74,10 +73,10 @@ export const DesktopDisplayCard = () => {
                 textShadow: "5px 5px 100px white",
               },
             }}
-            variant="h3"
+            variant="h5"
             data-aos="fade-up-right"
           >
-            Cybervie
+            A CYBER SECURITY FIRM
           </Typography>
           <br />
           <Typography
@@ -88,7 +87,7 @@ export const DesktopDisplayCard = () => {
             }}
             variant="h5"
           >
-            Comprehensive Cybervie-Certified SOC Analyst Training featuring
+            Comprehensive Cybervie Certified Program in Cyber Security featuring
             cloud-based labs replicating real-world scenarios, with placement
             assistance
           </Typography>
@@ -106,7 +105,7 @@ export const DesktopDisplayCard = () => {
             Join us now and embark on a journey towards a rewarding career in
             cybersecurity!
           </Typography>
-        </div>
+        </div> */}
         <br />
       </Paper>
     </div>

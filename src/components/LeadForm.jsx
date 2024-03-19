@@ -83,7 +83,7 @@ export const LeadForm = () => {
           fontSize: "2.2rem",
           lineHeight: 1.334,
           color: "#114084",
-          paddingTop: "2em",
+          paddingTop: "1em",
           textAlign: "center",
           fontWeight: "900",
         }}
