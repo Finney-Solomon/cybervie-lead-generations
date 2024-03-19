@@ -23,7 +23,7 @@ export const HomePage = () => {
         flexDirection: isMobileView ? "column" : "row",
         justifyContent: "space-between",
         width: "100%",
-        height: "100%",
+        // height: "100%",
       }}
     >
       {isMobileView ? (
@@ -37,7 +37,7 @@ export const HomePage = () => {
         </>
       ) : (
         <>
-          <div style={{ minWidth: "65vw", maxWidth: "65%" ,lineHeight:"2"}}>
+          <div style={{ minWidth: "65vw", maxWidth: "65%" }}>
             <DesktopDisplayCard />
           </div>
           <div style={{ minWidth: "35vw", maxWidth: "35%" }}>

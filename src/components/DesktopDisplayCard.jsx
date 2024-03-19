@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 export const DesktopDisplayCard = () => {
+  const [isMobileView, setMobileView] = useState(window.innerWidth <= 640);
+
   return (
     <div
       style={{
         background: "url(/images/backgroundImages.jpg)",
 
-        height: "91vh",
+        height: !isMobileView?"91vh":'75vh',
+        
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
