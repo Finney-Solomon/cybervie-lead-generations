@@ -14,6 +14,7 @@ export const LeadForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset 
   } = useForm();
   const [open, setOpen] = React.useState(false);
 
@@ -25,8 +26,7 @@ export const LeadForm = () => {
         console.log("Form data submitted:", data);
         // https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads
         //   "http://localhost:5001/usersLeads/addNewUserLeads"
-        const response = await axios.post(
-         
+        const response = await axios.post( 
           "https://cybervie-backend.onrender.com/usersLeads/addNewUserLeads",
           data
         );
@@ -37,6 +37,7 @@ export const LeadForm = () => {
             notificationType: "success",
           };
           dispatch(openSnackBarNotification(notification));
+          reset ()
         }
       } else {
         const notification = {
